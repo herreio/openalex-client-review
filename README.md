@@ -8,7 +8,7 @@
 
 ```sh
 # Repository
-git clone git@github.com:herreio/openalex-client-review.git
+git clone --recurse-submodules git@github.com:herreio/openalex-client-review.git
 cd openalex-client-review
 # Python environment
 python3 -m venv env
