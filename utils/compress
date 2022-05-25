@@ -2,7 +2,7 @@
 echo ""
 echo "start compression..."
 echo ""
-cd res
+cd data
 for i in *.json ; do
     target="$(basename -- "$i" .json).tar.gz"
     rm -f $target

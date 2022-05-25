@@ -19,8 +19,8 @@ res <- oaApiRequest(
 # Requesting url: https://api.openalex.org/works?filter=raw_affiliation_string.search%3Adresden%2Cfrom_publication_date%3A2017-01-01%2Cto_publication_date%3A2022-12-31
 # About to get a total of 214 pages of results with a total of 42768 records.
 
-jsonlite::write_json(res, "res/raw-affiliation-string-dresden--r-massimoaria.json")
-saveRDS(res, "res/raw-affiliation-string-dresden--r-massimoaria.RDS")
+jsonlite::write_json(res, "data/raw-affiliation-string-dresden--r-massimoaria.json")
+saveRDS(res, "data/raw-affiliation-string-dresden--r-massimoaria.RDS")
 
 df <- oa2df(res, entity = "works")
 

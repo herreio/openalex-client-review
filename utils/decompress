@@ -2,7 +2,7 @@
 echo ""
 echo "start decompression..."
 echo ""
-cd res
+cd data
 for i in *.tar.gz ; do
     tar -xvzf $i
 done
