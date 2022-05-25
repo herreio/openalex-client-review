@@ -23,7 +23,7 @@ Rscript -e "renv::restore()"
 
 ### Python
 
-#### `openalexapi` ([dpriskorn](https://github.com/dpriskorn/OpenAlexAPI))
+#### `openalexapi` ([dpriskorn](https://github.com/dpriskorn/OpenAlexAPI) / [PyPI](https://pypi.org/project/openalexapi/))
 
 ```py
 import openalexapi
@@ -53,7 +53,7 @@ pip install requests pydantic purl
 renv::install("./libs/openalexR-ekmaloney")
 ```
 
-#### `openalexR` ([massimoaria](https://github.com/massimoaria/openalexR))
+#### `openalexR` ([massimoaria](https://github.com/massimoaria/openalexR) / [CRAN](https://cran.r-project.org/package=openalexR))
 
 ```r
 renv::install("./libs/openalexR-massimoaria")
