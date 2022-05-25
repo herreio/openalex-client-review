@@ -13,6 +13,10 @@ dev.*
 
 README.html
 
+*.csv
+*.json
+*.RDS
+
 # ---------------------------------------------------------------------------- #
 
 # the following derives from R.gitignore which can be found at:
