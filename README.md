@@ -2,7 +2,7 @@
 
 ## Tasks
 
-- Find publications of authors associated with an academic institution in Dresden, Germany (Timespan: 2017-2022)
+- Find publications of authors associated with an academic institution in Dresden (Timespan: 2017-2022)
 
 ## Setup
 
