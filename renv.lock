@@ -796,19 +796,20 @@
     },
     "openalexR": {
       "Package": "openalexR",
-      "Version": "0.0.2",
+      "Version": "0.0.0.9000",
       "Source": "Local",
       "RemoteType": "local",
-      "RemoteUrl": "./libs/openalexR-massimoaria",
-      "Hash": "f23eca0c24b9f5034473bc56ff42c6ea",
+      "RemoteUrl": "./libs/openalexR-ekmaloney",
+      "Hash": "b15db6a4a54f9c102ba46785a7eb88fa",
       "Requirements": [
-        "curl",
         "dplyr",
         "httr",
         "jsonlite",
         "magrittr",
-        "progress",
-        "tibble"
+        "purrr",
+        "stringr",
+        "tibble",
+        "tidyr"
       ]
     },
     "openssl": {
