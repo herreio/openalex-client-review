@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+echo ""
+echo "start compression..."
+echo ""
+cd res
+for i in *.json ; do
+    target="$(basename -- "$i" .json).tar.gz"
+    rm -f $target
+    tar -cvzf $target $i
+done
+echo ""
+echo "compression done!"
+echo ""

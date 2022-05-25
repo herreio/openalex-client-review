@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+echo ""
+echo "start decompression..."
+echo ""
+cd res
+for i in *.tar.gz ; do
+    tar -xvzf $i
+done
+echo ""
+echo "decompression done!"
+echo ""
