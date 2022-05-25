@@ -1,0 +1,9 @@
+[submodule "libs/openalexR-ekmaloney"]
+	path = libs/openalexR-ekmaloney
+	url = ../../ekmaloney/openalexR.git
+[submodule "libs/openalexR-massimoaria"]
+	path = libs/openalexR-massimoaria
+	url = ../../massimoaria/openalexR.git
+[submodule "libs/openalexapi-pypi"]
+	path = libs/openalexapi-pypi
+	url = ../../dpriskorn/OpenAlexAPI.git
