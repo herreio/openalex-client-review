@@ -1,5 +1,9 @@
 # OpenAlex API Client Review
 
+## Tasks
+
+- Find publications of authors associated with an academic institution in Dresden, Germany (Timespan: 2017-2022)
+
 ## Setup
 
 ```sh
@@ -15,21 +19,11 @@ Rscript renv/activate.R
 Rscript -e "renv::restore()"
 ```
 
-## Links
-
-- [Client Libraries](https://docs.openalex.org/api#client-libraries) (Documentation)
-
-## Tests
+## Clients
 
 ### Python
 
-```sh
-pip install -r requirements.txt
-```
-
-#### `openalexapi`
-
-##### Usage Example
+#### `openalexapi` ([dpriskorn](https://github.com/dpriskorn/OpenAlexAPI))
 
 ```py
 import openalexapi
@@ -51,24 +45,20 @@ pip install requests pydantic purl
 
 ### R
 
-```r
-renv::restore()
-```
-
 #### `openalex` ([kth-library](https://github.com/kth-library/openalex))
 
-#### `openalexR` ([massimoaria](https://github.com/massimoaria/openalexR))
+#### `openalexR` ([ekmaloney](https://github.com/ekmaloney/openalexR))
 
-##### Installation
+```r
+renv::install("./libs/openalexR-ekmaloney")
+```
+
+#### `openalexR` ([massimoaria](https://github.com/massimoaria/openalexR))
 
 ```r
 renv::install("./libs/openalexR-massimoaria")
 ```
 
-#### `openalexR` ([ekmaloney](https://github.com/ekmaloney/openalexR))
+## Links
 
-##### Installation
-
-```r
-renv::install("./libs/openalexR-ekmaloney")
-```
+- [Client Libraries](https://docs.openalex.org/api#client-libraries) (Documentation)
