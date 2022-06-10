@@ -1,5 +1,6 @@
 certifi==2022.5.18.1
 charset-normalizer==2.0.12
+diophila==0.3.0
 idna==3.3
 openalexapi==0.0.1a8
 purl==1.6

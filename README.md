@@ -43,6 +43,8 @@ Package requirements are not properly specified.
 pip install requests pydantic purl
 ```
 
+#### `diophila` ([smierz](https://github.com/smierz/diophila) / [PyPI](https://pypi.org/project/diophila/))
+
 ### R
 
 #### `openalex` ([kth-library](https://github.com/kth-library/openalex))
