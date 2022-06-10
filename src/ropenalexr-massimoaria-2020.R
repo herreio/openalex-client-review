@@ -84,6 +84,8 @@ oa2020_oa_status <- as.character(lapply(oa2020json, function(x) {
     }))
 }))
 
+oa2020_oa_status <- gsub("character(0)", "", oa2020_oa_status, fixed=TRUE)
+
 oa2020_host_venue_issn_ls <- as.character(lapply(oa2020json, function(x) {
     paste(lapply(x$host_venue$issn_l, function(y) {
         y
