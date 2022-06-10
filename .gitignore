@@ -18,6 +18,7 @@ README.html
 *.RDS
 
 !data/raw-affiliation-string-dresden-2020--r-massimoaria.csv
+!data/raw-affiliation-string-dresden-2020--r-massimoaria--custom.csv
 
 # ---------------------------------------------------------------------------- #
 

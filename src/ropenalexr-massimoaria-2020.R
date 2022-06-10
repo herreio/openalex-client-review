@@ -29,3 +29,67 @@ write.csv(df, "data/raw-affiliation-string-dresden-2020--r-massimoaria.csv", row
 #  unimplemented type 'list' in 'EncodeElement'
 
 readr::write_csv(df, "data/raw-affiliation-string-dresden-2020--r-massimoaria.csv", na="")
+
+# ~~~ Create custom CSV output ~~~ #
+
+oa2020json <- jsonlite::read_json("data/raw-affiliation-string-dresden-2020--r-massimoaria.json")
+
+# Field Names
+#
+# "id"                      "doi"
+# "title"                   "display_name"
+# "relevance_score"         "publication_year"
+# "publication_date"        "ids"
+# "host_venue"              "type"
+# "open_access"             "authorships"
+# "cited_by_count"          "biblio"
+# "is_retracted"            "is_paratext"
+# "concepts"                "mesh"
+# "alternate_host_venues"   "referenced_works"
+# "related_works"           "abstract_inverted_index"
+# "cited_by_api_url"        "counts_by_year"
+# "updated_date"            "created_date"
+
+# Field Names (authorships)
+
+# "author_position"        "author"                 "institutions"
+# "raw_affiliation_string"
+
+oa2020_ids <- as.character(lapply(oa2020json, function(x) unlist(x$id)))
+oa2020_dois <- as.character(lapply(oa2020json, function(x) unlist(x$doi)))
+oa2020_dois <- gsub("character(0)", "", oa2020_dois, fixed=TRUE)
+
+oa2020_authorships_institution_id=unlist(lapply(oa2020json, function(x) {
+    paste(unlist(lapply(x$authorships, function(y) {
+        paste(unlist(lapply(y$institutions, function(z) {
+            z$id
+        })), collapse="~")
+    })), collapse="|")
+}))
+
+oa2020_authorships_institution_ror=unlist(lapply(oa2020json, function(x) {
+    paste(unlist(lapply(x$authorships, function(y) {
+        paste(unlist(lapply(y$institutions, function(z) {
+            z$ror
+        })), collapse="~")
+    })), collapse="|")
+}))
+
+oa2020_authorships_raw_affiliation_string=unlist(lapply(oa2020json, function(x) {
+    paste(unlist(lapply(x$authorships, function(y) {
+        paste(unlist(lapply(y$raw_affiliation_string, function(z) {
+            z
+        })), collapse="~")
+    })), collapse="|")
+}))
+
+oa2020df <- data.frame(
+    id=oa2020_ids,
+    doi=oa2020_dois,
+    author_institution_id=oa2020_authorships_institution_id,
+    author_institution_ror=oa2020_authorships_institution_ror,
+    author_institution_raw=oa2020_authorships_raw_affiliation_string,
+    stringsAsFactors=FALSE
+)
+
+write.csv(oa2020df, "data/raw-affiliation-string-dresden-2020--r-massimoaria--custom.csv", row.names=FALSE, na="")
