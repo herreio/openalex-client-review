@@ -57,9 +57,11 @@ oa2020json <- jsonlite::read_json("data/raw-affiliation-string-dresden-2020--r-m
 
 oa2020_ids <- as.character(lapply(oa2020json, function(x) unlist(x$id)))
 oa2020_types <- as.character(lapply(oa2020json, function(x) unlist(x$type)))
+oa2020_types <- gsub("NULL", "", oa2020_types, fixed=TRUE)
 oa2020_pys <- as.integer(lapply(oa2020json, function(x) unlist(x$publication_year)))
 oa2020_dois <- as.character(lapply(oa2020json, function(x) unlist(x$doi)))
 oa2020_dois <- gsub("character(0)", "", oa2020_dois, fixed=TRUE)
+oa2020_dois <- gsub("NULL", "", oa2020_dois, fixed=TRUE)
 
 oa2020_host_venue_issn_ls=as.character(lapply(oa2020json, function(x) {
     paste(lapply(x$host_venue$issn_l, function(y) {
