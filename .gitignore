@@ -17,6 +17,8 @@ README.html
 *.json
 *.RDS
 
+!data/raw-affiliation-string-dresden-2020--r-massimoaria.csv
+
 # ---------------------------------------------------------------------------- #
 
 # the following derives from R.gitignore which can be found at:
