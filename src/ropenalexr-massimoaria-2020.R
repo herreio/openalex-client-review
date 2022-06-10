@@ -56,8 +56,23 @@ oa2020json <- jsonlite::read_json("data/raw-affiliation-string-dresden-2020--r-m
 # "raw_affiliation_string"
 
 oa2020_ids <- as.character(lapply(oa2020json, function(x) unlist(x$id)))
+oa2020_types <- as.character(lapply(oa2020json, function(x) unlist(x$type)))
+oa2020_pys <- as.integer(lapply(oa2020json, function(x) unlist(x$publication_year)))
 oa2020_dois <- as.character(lapply(oa2020json, function(x) unlist(x$doi)))
 oa2020_dois <- gsub("character(0)", "", oa2020_dois, fixed=TRUE)
+
+oa2020_host_venue_issn_ls=as.character(lapply(oa2020json, function(x) {
+    paste(lapply(x$host_venue$issn_l, function(y) {
+        y
+    }))
+}))
+oa2020_host_venue_issn_ls <- gsub("character(0)", "", oa2020_host_venue_issn_ls, fixed=TRUE)
+
+oa2020_host_venue_issns=as.character(lapply(oa2020json, function(x) {
+    paste(lapply(x$host_venue$issn, function(y) {
+        paste(unlist(y), collapse="~")
+    }), collapse="|")
+}))
 
 oa2020_authorships_institution_id=unlist(lapply(oa2020json, function(x) {
     paste(unlist(lapply(x$authorships, function(y) {
@@ -85,7 +100,11 @@ oa2020_authorships_raw_affiliation_string=unlist(lapply(oa2020json, function(x) 
 
 oa2020df <- data.frame(
     id=oa2020_ids,
+    types=oa2020_types,
+    publication_year=oa2020_pys,
     doi=oa2020_dois,
+    issn=oa2020_host_venue_issns,
+    issn_l=oa2020_host_venue_issn_ls,
     author_institution_id=oa2020_authorships_institution_id,
     author_institution_ror=oa2020_authorships_institution_ror,
     author_institution_raw=oa2020_authorships_raw_affiliation_string,
