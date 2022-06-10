@@ -126,7 +126,7 @@ oa2020_authorships_raw_affiliation_string <- as.character(lapply(oa2020json, fun
 
 oa2020df <- data.frame(
     id=oa2020_ids,
-    types=oa2020_types,
+    type=oa2020_types,
     publication_date=oa2020_pds,
     publication_year=oa2020_pys,
     is_oa=oa2020_is_oa,
