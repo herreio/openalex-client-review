@@ -7,3 +7,6 @@
 [submodule "libs/openalexapi-pypi"]
 	path = libs/openalexapi-pypi
 	url = ../../dpriskorn/OpenAlexAPI.git
+[submodule "libs/diophila-pypi"]
+	path = libs/diophila-pypi
+	url = ../../smierz/diophila.git
