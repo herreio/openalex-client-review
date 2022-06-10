@@ -1,5 +1,7 @@
 # OpenAlex API Client Review
 
+For details on OpenAlex, see [10.48550/arXiv.2205.01833](https://doi.org/10.48550/arXiv.2205.01833)
+
 ## Tasks
 
 - Find publications of authors associated with an academic institution in Dresden (Timespan: 2017-2022)
