@@ -68,6 +68,7 @@ oa2020_ids <- as.character(lapply(oa2020json, function(x) unlist(x$id)))
 oa2020_types <- as.character(lapply(oa2020json, function(x) unlist(x$type)))
 oa2020_types <- gsub("NULL", "", oa2020_types, fixed=TRUE)
 oa2020_pys <- as.integer(lapply(oa2020json, function(x) unlist(x$publication_year)))
+oa2020_pds <- as.character(lapply(oa2020json, function(x) unlist(x$publication_date)))
 oa2020_dois <- as.character(lapply(oa2020json, function(x) unlist(x$doi)))
 oa2020_dois <- gsub("character(0)", "", oa2020_dois, fixed=TRUE)
 oa2020_dois <- gsub("NULL", "", oa2020_dois, fixed=TRUE)
@@ -126,6 +127,7 @@ oa2020_authorships_raw_affiliation_string <- as.character(lapply(oa2020json, fun
 oa2020df <- data.frame(
     id=oa2020_ids,
     types=oa2020_types,
+    publication_date=oa2020_pds,
     publication_year=oa2020_pys,
     is_oa=oa2020_is_oa,
     oa_status=oa2020_oa_status,
