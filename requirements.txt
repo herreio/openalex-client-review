@@ -2,7 +2,7 @@ certifi==2022.5.18.1
 charset-normalizer==2.0.12
 diophila==0.3.0
 idna==3.3
-openalexapi==0.0.1a8
+openalexapi==0.0.1a0
 purl==1.6
 pydantic==1.9.1
 requests==2.27.1
