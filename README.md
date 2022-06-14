@@ -39,7 +39,7 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'requests'
 ```
 
-Package requirements are not properly specified.
+Package requirements are not yet properly specified.
 
 ```sh
 pip install requests pydantic purl
