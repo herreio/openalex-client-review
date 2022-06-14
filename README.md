@@ -34,7 +34,7 @@ import openalexapi
 ```txt
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-  File "/home/herre/devel/herreio/openalex-client-review/env/lib/python3.8/site-packages/openalexapi/__init__.py", line 3, in <module>
+  File "~/devel/herreio/openalex-client-review/env/lib/python3.8/site-packages/openalexapi/__init__.py", line 3, in <module>
     import requests
 ModuleNotFoundError: No module named 'requests'
 ```
