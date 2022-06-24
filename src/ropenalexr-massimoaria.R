@@ -24,7 +24,7 @@ saveRDS(res, "data/raw-affiliation-string-dresden--r-massimoaria.RDS")
 
 df <- oa2df(res, entity = "works")
 
-# converting [============================>--]  93% eta:  1m
+# converting [=================>-------------]  57% eta:  5m
 # Error in data.frame(au_id = l[["author"]]$id, au_name = l[["author"]]$display_name,  :
 # arguments imply differing number of rows: 1, 0
 
